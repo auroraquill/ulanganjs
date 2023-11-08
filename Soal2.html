@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 2</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="Soal2">
+    <h1>Kalkulator Keliling Trapezium Sama Kaki</h1>
+    
+    <form>
+        <label for="sisiA">Panjang Sisi A:</label>
+        <input type="number" id="sisiA">
+        <br>
+        <label for="sisiB">Panjang Sisi B:</label>
+        <input type="number" id="sisiB">
+        <br>
+        <label for="sisiC">Panjang Sisi C:</label>
+        <input type="number" id="sisiC">
+        <br>
+        <label for="sisiD">Panjang Sisi D:</label>
+        <input type="number" id="sisiD">
+        <br>
+        <button type="button" onclick="hitungKeliling()">Hitung Keliling</button>
+    </form>
+
+    <p>Keliling Trapezium Sama Kaki: <span id="hasilKeliling"></span></p>
+
+    <script>
+        function hitungKeliling() {
+            const sisiA = parseFloat(document.getElementById("sisiA").value);
+            const sisiB = parseFloat(document.getElementById("sisiB").value);
+            const sisiC = parseFloat(document.getElementById("sisiC").value);
+            const sisiD = parseFloat(document.getElementById("sisiD").value);
+
+            const keliling = sisiA + sisiB + sisiC + sisiD;
+
+            // Tampilkan hasil
+            document.getElementById("hasilKeliling").textContent = keliling;
+        }
+    </script>
+    </div>
+</body>
+</html>

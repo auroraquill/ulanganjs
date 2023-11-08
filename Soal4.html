@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 4</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="Soal4">
+    <h1>Kalkulator Kembalian</h1>
+
+    <label for="hargaBarang">Harga Barang:</label>
+    <input type="number" id="hargaBarang">
+    <br>
+
+    <label for="jumlahUang">Jumlah Uang Dibayarkan:</label>
+    <input type="number" id="jumlahUang">
+    <br>
+
+    <button onclick="hitungKembalian()">Hitung Kembalian</button>
+    <p id="kembalian"></p>
+
+    <script>
+        function hitungKembalian() {
+            var hargaBarang = parseFloat(document.getElementById("hargaBarang").value);
+            var jumlahUang = parseFloat(document.getElementById("jumlahUang").value);
+
+            if (isNaN(hargaBarang) || isNaN(jumlahUang)) {
+                alert("Masukkan angka yang valid.");
+                return;
+            }
+
+            if (hargaBarang <= 0 || jumlahUang <= 0) {
+                alert("Harga barang dan jumlah uang harus lebih besar dari nol.");
+                return;
+            }
+
+            if (jumlahUang < hargaBarang) {
+                alert("Jumlah uang yang dibayarkan tidak mencukupi.");
+                return;
+            }
+
+            var kembalian = jumlahUang - hargaBarang;
+
+            document.getElementById("kembalian").textContent = "Kembalian: Rp " + kembalian.toFixed(2);
+        }
+    </script>
+    </div>
+</body>
+</html>
